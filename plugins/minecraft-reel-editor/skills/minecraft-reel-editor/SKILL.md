@@ -38,7 +38,7 @@ Turn one narrated Minecraft recording with false starts, mistakes, and retakes i
      --output WORK_DIR/contact-sheet.png
    ```
 
-9. Inspect the contact sheet. Keep `center_crop` unless important side UI, chat, inventory, coordinates, text, or an off-center build would be lost. Change those clips to `full_frame`, regenerate the proposal, and show the user:
+9. Inspect the contact sheet and its adjacent `contact-sheet.json` cell mapping. Keep `center_crop` unless important side UI, chat, inventory, coordinates, text, or an off-center build would be lost. Change those clips to `full_frame`, regenerate the proposal, and show the user:
    - the exact proposed script;
    - the cut table and take choices;
    - expected duration;

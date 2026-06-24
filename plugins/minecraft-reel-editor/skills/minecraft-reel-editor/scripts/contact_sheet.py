@@ -9,17 +9,12 @@ from pathlib import Path
 
 from common import (
     ReelError,
-    format_time,
     load_json,
     require_executable,
     resolve_source,
     run,
     save_json,
 )
-
-
-def filter_path(path: Path) -> str:
-    return str(path.resolve()).replace("\\", "/").replace(":", r"\:").replace("'", r"\'")
 
 
 def main() -> int:
@@ -48,7 +43,6 @@ def main() -> int:
         for clip in clips[:12]
     ]
     ffmpeg = require_executable("ffmpeg")
-    font = Path(__file__).resolve().parent.parent / "assets" / "PixelifySans[wght].ttf"
     command = [ffmpeg, "-hide_banner", "-loglevel", "error", "-y"]
     for sample in samples:
         command.extend(["-ss", str(sample["time"]), "-i", str(source)])
@@ -57,18 +51,11 @@ def main() -> int:
     filters: list[str] = []
     labels: list[str] = []
     for index, sample in enumerate(samples):
-        text = f"{index + 1}  {sample['clip_id']}  {format_time(sample['time'])}"
-        escaped_text = text.replace(":", r"\:")
-        drawtext = (
-            f"drawtext=fontfile='{filter_path(font)}':"
-            f"text='{escaped_text}':"
-            "fontcolor=white:fontsize=20:borderw=3:bordercolor=black:x=10:y=10"
-        )
         filters.append(
             f"[{index}:v]scale={cell_width}:{cell_height}:"
             "force_original_aspect_ratio=decrease,"
-            f"pad={cell_width}:{cell_height}:(ow-iw)/2:(oh-ih)/2:color=black,"
-            f"{drawtext}[cell{index}]"
+            f"pad={cell_width}:{cell_height}:(ow-iw)/2:(oh-ih)/2:color=black"
+            f"[cell{index}]"
         )
         labels.append(f"[cell{index}]")
     columns = min(args.columns, len(samples))
