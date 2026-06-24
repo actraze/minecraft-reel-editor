@@ -127,6 +127,15 @@ class RenderTests(unittest.TestCase):
             )
             self.assertTrue(contact.exists())
 
+            available_filters = subprocess.run(
+                [shutil.which("ffmpeg"), "-hide_banner", "-filters"],
+                text=True,
+                capture_output=True,
+                check=False,
+            ).stdout
+            if " ass " not in available_filters and " subtitles " not in available_filters:
+                self.skipTest("This FFmpeg build lacks the required libass subtitle filter")
+
             refused = self.run_script(
                 "render.py",
                 "--plan",

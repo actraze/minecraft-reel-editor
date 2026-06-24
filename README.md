@@ -12,6 +12,8 @@ Prerequisites:
 - Python 3.10 or newer
 - FFmpeg with `ffprobe`, `libx264`, and `libass`
 
+Some minimal FFmpeg packages omit subtitle rendering. The bundled setup check will reject those builds rather than silently produce a reel without captions.
+
 Install directly from GitHub:
 
 ```bash
