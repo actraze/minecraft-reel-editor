@@ -1,0 +1,37 @@
+{
+  "name": "minecraft-reel-editor",
+  "version": "0.1.0",
+  "description": "Turn messy narrated Minecraft recordings into approved, polished vertical reels using local transcription and FFmpeg.",
+  "author": {
+    "name": "Zaid",
+    "email": "zaiid.ghanimm@gmail.com",
+    "url": "https://github.com/actraze"
+  },
+  "homepage": "https://github.com/actraze/minecraft-reel-editor",
+  "repository": "https://github.com/actraze/minecraft-reel-editor",
+  "license": "MIT",
+  "keywords": [
+    "minecraft",
+    "reels",
+    "video-editing",
+    "ffmpeg",
+    "whisper"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Minecraft Reel Editor",
+    "shortDescription": "Cut messy Minecraft takes into a polished reel.",
+    "longDescription": "Transcribe a narrated Minecraft recording locally, propose an exact-word edit for approval, then cut takes, tighten pauses, frame vertically, and burn pixel captions.",
+    "developerName": "Zaid",
+    "category": "Creativity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/actraze/minecraft-reel-editor",
+    "defaultPrompt": [
+      "Edit my narrated Minecraft recording into a reel."
+    ],
+    "brandColor": "#55AA55"
+  }
+}

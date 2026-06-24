@@ -1,0 +1,7 @@
+interface:
+  display_name: "Minecraft Reel Editor"
+  short_description: "Turn messy Minecraft recordings into polished reels"
+  default_prompt: "Use $minecraft-reel-editor on my narrated Minecraft recording."
+  brand_color: "#55AA55"
+policy:
+  allow_implicit_invocation: true

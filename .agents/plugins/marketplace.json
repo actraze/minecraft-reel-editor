@@ -1,0 +1,20 @@
+{
+  "name": "minecraft-reels",
+  "interface": {
+    "displayName": "Minecraft Reels"
+  },
+  "plugins": [
+    {
+      "name": "minecraft-reel-editor",
+      "source": {
+        "source": "local",
+        "path": "./plugins/minecraft-reel-editor"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creativity"
+    }
+  ]
+}
